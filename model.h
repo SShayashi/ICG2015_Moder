@@ -167,13 +167,22 @@ public:
 		
 
 		setAmbientColor(0, 0.5f, 0.5f);
-		drawBox( 4, 0.3, 4 );       // ‘ä‚ğ•`‰æ
-		glTranslated( 2, 0, 2 );    // Œ´“_‚ğ‘ä‚Ì’†S‚ÉˆÚ“® 
 		//P‚Ìæ‚Áè•”•ª‚ğ•`‰æ
-		glRotated(90,1,0,0);
+		drawCylinder( 1, 4, 4 );
 
+		//P‚Ì“®‚­êŠ‚ğì¬
+		glPushMatrix();
+		drawCylinder(3,2,2);
 
-		 drawCylinder( 1, 1, 1 );
+		//P‚Ìå²•”•ª‚ğ•`‰æ
+		drawCylinder( 15, 1, 1 );
+
+		//Œ´“_‚ğP‚Ì’[‚Á‚±‚ÉˆÚ“®
+		glTranslated(0,0,15);
+
+		//P‚Ì––’[‚ğ•`‰æ
+		drawCylinder(1,3,1);
+		
 
 
   
