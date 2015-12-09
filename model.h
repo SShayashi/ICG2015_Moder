@@ -181,18 +181,91 @@ public:
 
 		//²‚ğ•`‰æ
 		DrawAxis();
+		
+		
 
 		setAmbientColor(0, 0.5f, 0.5f);
+		setDiffuseColor( 0.8, 0.8 ,0.8 ,1 );
 		//P‚Ìæ‚Áè•”•ª‚ğ•`‰æ
+		glTranslated(0,0,-10);
+		glScaled(0.3,0.3,0.3);
+		glPushMatrix();  
+	
 		drawCylinder( 3, 3, 2 );
 
 		//P‚Ìå²•”•ª‚ğ•`‰æ
-		drawCylinder( 40, 1, 1 );
+		drawCylinder( 60, 1, 1 );
 
-		//P‚Ì“®‚­•”•ª‚ğ•`‰æ
+		//P‚Ì‘¾‚¢•”•ª‚ğ•`‰æ
+		drawCylinder( 20, 2, 2 );
 
+		//“®‚­•”•ª‚ğ•`‰æ
+		glTranslated(0,0,20);
+		drawCylinder( 3, 2.5, 2.5 );
 
+		//×œ‚P
+		glRotated(30,0,1,0);
+		glBegin( GL_POLYGON);
+			glNormal3d(  0,  1, 0 );
+			glVertex3d(  0,  0, 0 );
+			glVertex3d(  0, 0, 20 );
+			glVertex3d(  1,  0, 20 );
+			glVertex3d(  1, 0, 18 );
+			glVertex3d(  1.5, 0, 16 );
+			glVertex3d(  1.5, 0, 12 );
+			glVertex3d(  1.5, 0, 0 );
+		glEnd();
 
+		//×œ‚P‚Ìæ‚Ö
+		glTranslated(0,0,20);
+
+		//×œ‚Q‚Ì•`‰æ
+		glRotated(-60,0,1,0);
+		glBegin( GL_POLYGON);
+			glNormal3d(  0,  1, 0 );
+			glVertex3d(  -0.5,  0, 0 );
+			glVertex3d(  -0.3, 0, -1 );
+			glVertex3d(  0,  0, -2 );
+			glVertex3d(  0, 0, -20 );
+			glVertex3d(  1, 0, -20 );
+			glVertex3d(  1, 0, 20 );
+			glVertex3d(  0, 0, 20 );
+		glEnd();
+
+		//×œ‚Q‚Ìæ‚Ö
+		glTranslated(0,0,-20);
+		glRotated(30,0,1,0);
+
+		//×œ3‚Ì•`‰æ
+		glBegin( GL_POLYGON);
+			glNormal3d(  0,  1, 0 );
+			glVertex3d(  0,  0, 0 );
+			glVertex3d(  0.5, 0, 4 );
+			glVertex3d(  0.5,  0, 35 );
+			glVertex3d(  1, 0, 35 );
+			glVertex3d(  1, 0, -5 );
+			glVertex3d(  0.5, 0, -5 );
+			glVertex3d(  0.5, 0, -2 );
+		glEnd();
+
+		//×œ‚R‚Ìæ‚Ö
+		glTranslated(0,0,40);
+		glRotated(160,0,1,0);
+
+		//×œ4‚Ì•`‰æ
+		glBegin( GL_POLYGON);
+			glNormal3d(  0,  1, 0 );
+			glVertex3d(  0,  0, -2 );
+			glVertex3d(  1.5, 0, -2 );
+			glVertex3d(  1.5,  0, 30 );
+			glVertex3d(  1, 0, 5 );
+			glVertex3d(  0, 0, 0 );
+		glEnd();
+
+		glPopMatrix();    
+		glPopMatrix();    
+
+		//
 
 		/*
 		//P‚Ì“®‚­êŠ‚ğì¬iÀ•WŒn‚ğ•Û‘¶j
