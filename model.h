@@ -216,25 +216,24 @@ public:
 			glVertex3d(  1.5, 0, 0 );
 		glEnd();
 
-		//×œ‚P‚Ìæ‚Ö
-		glTranslated(0,0,20);
+		//P‚Ìæ‚Ö
+		glRotated(-30,0,1,0);
+		glTranslated(0,0,35);
 
 		//×œ‚Q‚Ì•`‰æ
-		glRotated(-60,0,1,0);
+		glRotated(150,0,1,0);
+
 		glBegin( GL_POLYGON);
 			glNormal3d(  0,  1, 0 );
-			glVertex3d(  -0.5,  0, 0 );
-			glVertex3d(  -0.3, 0, -1 );
-			glVertex3d(  0,  0, -2 );
-			glVertex3d(  0, 0, -20 );
-			glVertex3d(  1, 0, -20 );
-			glVertex3d(  1, 0, 20 );
-			glVertex3d(  0, 0, 20 );
+			glVertex3d(  0,  0, 0 );
+			glVertex3d(  1, 0, 0 );
+			glVertex3d(  1, 0, 40 );
+			glVertex3d(  0, 0, 40 );
 		glEnd();
 
 		//×œ‚Q‚Ìæ‚Ö
-		glTranslated(0,0,-20);
-		glRotated(30,0,1,0);
+		glTranslated(0,0,40);
+		glRotated(-140,0,1,0);
 
 		//×œ3‚Ì•`‰æ
 		glBegin( GL_POLYGON);
