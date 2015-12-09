@@ -220,9 +220,27 @@ public:
 		glRotated(-30,0,1,0);
 		glTranslated(0,0,35);
 
+		setDiffuseColor( 0.8, 0.8 ,0.8 ,0.7 );
+		setAmbientColor(0, 0.2f, 0.8f);
+		// 頂点座標の指定
+		Vec3d A( 0, 0, 0 );
+		Vec3d B(  20, 0, -40*0.886 );
+		Vec3d C(  0,  40*0.886, -40 );
+		// 法線ベクトル
+		Vec3d N = ( A-C) ^ ( B-C );
+
+		glBegin( GL_TRIANGLES );
+		glNormal3d( N[0], N[1], N[2] );
+		glVertex3d( A[0], A[1], A[2] );
+		glVertex3d( B[0], B[1], B[2] );
+		glVertex3d( C[0], C[1], C[2] );
+		glEnd();
+
+		setDiffuseColor( 0.8, 0.8 ,0.8 ,1 );
+		setAmbientColor(0, 0.5f, 0.5f);
+
 		//細骨２の描画
 		glRotated(150,0,1,0);
-
 		glBegin( GL_POLYGON);
 			glNormal3d(  0,  1, 0 );
 			glVertex3d(  0,  0, 0 );
