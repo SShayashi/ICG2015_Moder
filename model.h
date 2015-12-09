@@ -33,6 +33,43 @@ private:
 
 
 public:
+
+	//ラジアンを度に変換する関数
+	double RadianToAngle(double radian){
+		return radian*180*M_PI;
+	}
+
+	//度をラジアンに変換する関数
+	double AngleToRadian(double angle){
+		return angle*M_PI/180;
+	}
+
+	//軸を描画する
+	void DrawAxis(){
+		//xは赤色
+		setAmbientColor(1, 0, 0);
+		glBegin(GL_LINE_STRIP);
+		glVertex3d(-100,0,0);
+		glVertex3d(100,0,0);
+		glEnd();
+		
+
+		//yは緑
+		setAmbientColor(0, 1, 0);
+		glBegin(GL_LINE_STRIP);
+		glVertex3d(0,100,0);
+		glVertex3d(0,-100,0);
+		glEnd();
+		
+
+		//zは青
+		setAmbientColor(0, 0, 1);
+		glBegin(GL_LINE_STRIP);
+		glVertex3d(0,0,100);
+		glVertex3d(0,0,-100);
+		glEnd();
+	}
+
     // コンストラクタ（スーパークラスのコンストラクタを呼び出す）
     Model( int x, int y, int w, int h, char* label ) : ModelerView( x, y, w, h, label )
     {
@@ -142,47 +179,66 @@ public:
         BeginPaint();
 		glPushMatrix();             // 初期座標系を保存
 
-		//xは赤色
-		setAmbientColor(1, 0, 0);
-		glBegin(GL_LINE_STRIP);
-		glVertex3d(-100,0,0);
-		glVertex3d(100,0,0);
-		glEnd();
-		
-
-		//yは緑
-		setAmbientColor(0, 1, 0);
-		glBegin(GL_LINE_STRIP);
-		glVertex3d(0,100,0);
-		glVertex3d(0,-1000,0);
-		glEnd();
-		
-
-		//zは青
-		setAmbientColor(0, 0, 1);
-		glBegin(GL_LINE_STRIP);
-		glVertex3d(0,0,100);
-		glVertex3d(0,0,-100);
-		glEnd();
-		
+		//軸を描画
+		DrawAxis();
 
 		setAmbientColor(0, 0.5f, 0.5f);
 		//傘の取っ手部分を描画
-		drawCylinder( 1, 4, 4 );
+		drawCylinder( 3, 3, 2 );
 
-		//傘の動く場所を作成
+		//傘の主軸部分を描画
+		drawCylinder( 40, 1, 1 );
+
+		//傘の動く部分を描画
+
+
+
+
+		/*
+		//傘の動く場所を作成（座標系を保存）
 		glPushMatrix();
 		drawCylinder(3,2,2);
 
-		//傘の主軸部分を描画
-		drawCylinder( 15, 1, 1 );
-
+	
 		//原点を傘の端っこに移動
-		glTranslated(0,0,15);
+		glTranslated(0,0,20);
 
 		//傘の末端を描画
 		drawCylinder(1,3,1);
+
+		//動く場所の座標系を復元
+		glPopMatrix();
 		
+		//小骨を作成
+
+		glRotated(30,0,1,0);
+		drawCylinder(10,1,1);
+		
+		glRotated(-30,0,1,0);
+		glTranslated(sin(AngleToRadian(30))*10,0,cos(AngleToRadian(30))*10);
+		//一本目の大骨を作成
+		glPushMatrix();
+		glRotated(-30,0,1,0);
+		
+
+
+		glBegin(GL_LINE_STRIP);
+			glVertex3d(0,0,10);
+			glVertex3d(0,0,-10);
+		glEnd();
+		
+
+		//二本目の大骨を作成	
+		glTranslated(0,0,-10);
+		glRotated(40,0,1,0);
+		
+		drawCylinder(20,1,1);
+		glBegin(GL_LINE_STRIP);
+			glVertex3d(0,0,20);
+			glVertex3d(0,0,0);
+		glEnd();
+
+		*/
 
 
   
