@@ -117,7 +117,7 @@ void ParticleSystem::drawParticles(float t)
 
        for(int i = 0; i < MAX_PARTICLE; i++){
              if(particle[i].m > 0.0){
-                  glPointSize(3.0);                          //パーティクルの大きさ
+                  glPointSize(1.0);                          //パーティクルの大きさ
                   glBegin(GL_POINTS);
                   glVertex3f(particle[i].x[0], particle[i].x[1], particle[i].x[2]);
                   glEnd();
@@ -159,8 +159,8 @@ void ParticleSystem::AddParticleStartingAt(Vec3d WorldPoint)
        if(Particle_num > MAX_PARTICLE)
             Particle_num = 0;
 
-       double x = getRandom(-0.5, 0.5);
-       double z = getRandom(-0.5, 0.5);
+       double x = getRandom(-30, 30);
+       double z = getRandom(-30, 30);
 
        particle[Particle_num] = Particle(1.0, WorldPoint, Vec3d(x, 0.0, z), Vec3d(0.0, 0.0, 0.0));
        Particle_num++;

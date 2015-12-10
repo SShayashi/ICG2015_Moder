@@ -21,6 +21,11 @@ enum CONTROLLERS {
 	X_POSITION,
 	Y_POSITION,
 	Z_POSITION,
+	UMB_POSITION,//傘の動かす部分の座標
+	UMB_ANGLE1,
+	UMB_ANGLE2,
+	UMB_ANGLE3,
+	UMB_ANGLE4,
     NUM_CONTROLS,   // コントローラ数（必ず末尾に追加）
 };
 
@@ -35,6 +40,12 @@ void SetController( ModelerControl* controls )
 	controls[X_POSITION] = ModelerControl( "X-Position", -3.0f, 3.0f, 0.1f, 0.0f );
 	controls[Y_POSITION] = ModelerControl( "Y-Position", -3.0f, 3.0f, 0.1f, 0.0f );
 	controls[Z_POSITION] = ModelerControl( "Z-Position", -3.0f, 3.0f, 0.1f, 0.0f );
+	controls[UMB_POSITION] = ModelerControl( "UMB-Position", 14.0f, 40.0f, 1.0f, 20.0f );
+	controls[UMB_ANGLE1] = ModelerControl( "UMB-Angle1", 0.0f, 360.0f, 1.0f, 35.0f );
+	controls[UMB_ANGLE2] = ModelerControl( "UMB-Angle2", 0.0f, 360.0f, 1.0f, 150.0f );
+	controls[UMB_ANGLE3] = ModelerControl( "UMB-Angle3", -140.0f, 360.0f, 1.0f, -140.0f );
+	controls[UMB_ANGLE4] = ModelerControl( "UMB-Angle4", 0.0f, 360.0f, 1.0f, 160.0f );
+	
 }
 
 // __CONTROLLER_H__
