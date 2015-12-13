@@ -26,8 +26,8 @@
 #include "vec.h"
 #include "mat.h"
 
-#define MAX_PARTICLE 500                          //パーティクルの最大数
-#define Spawn_Num 5                                    //一度に放出する個数
+#define MAX_PARTICLE 1000                          //パーティクルの最大数
+#define Spawn_Num 10                                    //一度に放出する個数
 static Vec3d G = Vec3d(0.0, -9.8, 0.0);           //重力加速度
 static float drag = 0.001;                                  //空気抵抗
 

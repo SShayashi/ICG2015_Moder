@@ -117,7 +117,7 @@ void ParticleSystem::drawParticles(float t)
 
        for(int i = 0; i < MAX_PARTICLE; i++){
              if(particle[i].m > 0.0){
-                  glPointSize(1.0);                          //パーティクルの大きさ
+                  glPointSize(1.5);                          //パーティクルの大きさ
                   glBegin(GL_POINTS);
                   glVertex3f(particle[i].x[0], particle[i].x[1], particle[i].x[2]);
                   glEnd();

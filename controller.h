@@ -21,6 +21,7 @@ enum CONTROLLERS {
 	X_POSITION,
 	Y_POSITION,
 	Z_POSITION,
+	UMB_CNT_ANGLE,//éPÇÃìÆÇ©Ç∑ïîï™ÇÃç¿ïW
 	UMB_POSITION,//éPÇÃìÆÇ©Ç∑ïîï™ÇÃç¿ïW
 	UMB_ANGLE1,
 	UMB_ANGLE2,
@@ -37,9 +38,10 @@ void SetController( ModelerControl* controls )
     controls[FRAME_CONTROLS] = ModelerControl( "Frame Number", 0, (float)max_frame_count, 1, 0 );
 
     // Å`Å`Å`ÉXÉâÉCÉ_Çí«â¡Å`Å`Å`
-	controls[X_POSITION] = ModelerControl( "X-Position", -3.0f, 3.0f, 0.1f, 0.0f );
-	controls[Y_POSITION] = ModelerControl( "Y-Position", -3.0f, 3.0f, 0.1f, 0.0f );
-	controls[Z_POSITION] = ModelerControl( "Z-Position", -3.0f, 3.0f, 0.1f, 0.0f );
+	controls[X_POSITION] = ModelerControl( "X-Position", -100.0f, 100.0f, 2.0f, 0.0f );
+	controls[Y_POSITION] = ModelerControl( "Y-Position", -100.0f, 100.0f, 2.0f, 0.0f );
+	controls[Z_POSITION] = ModelerControl( "Z-Position", -100.0f, 100.0f, 2.0f, 0.0f );
+	controls[UMB_CNT_ANGLE] = ModelerControl( "UMB_CNT_ANGLE", 0.0f, 360.0f, 2.0f, 0.0f );
 	controls[UMB_POSITION] = ModelerControl( "UMB-Position", 14.0f, 40.0f, 1.0f, 20.0f );
 	controls[UMB_ANGLE1] = ModelerControl( "UMB-Angle1", 0.0f, 360.0f, 1.0f, 35.0f );
 	controls[UMB_ANGLE2] = ModelerControl( "UMB-Angle2", 0.0f, 360.0f, 1.0f, 150.0f );
